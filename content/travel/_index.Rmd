@@ -1,0 +1,28 @@
+---
+title: Travel
+author: Jay
+date: '2019-07-22'
+slug: _index
+description: "Thank you for travellin' to my site"
+featured_image: '/images/Cartagena_pd.jpg'
+output: html_document
+---
+
+I have not been everyhere - not even close - but want to share all my experiences. See the different trips and description, as well as map highlighting the destinationsdescription: 
+
+```{r include = FALSE}
+library(leaflet)
+library(tidyverse)
+library(widgetframe)
+vacation <- read_csv("/Users/Jaycromwell/Desktop/R_Projects/jay_world_cities - Sheet1.csv")
+
+m <-leaflet(vacation) %>%
+    addTiles() %>%  # Add default OpenStreetMap map tiles
+    addMarkers(~lng,~lat, popup=vacation$desc)
+```
+
+See my travel map below:
+
+```{r}
+m
+```

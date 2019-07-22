@@ -1,0 +1,43 @@
+title = "Jay Cromwell"
+baseURL = "/"
+languageCode = "en-us"
+theme = "gohugo-theme-ananke"
+description = "A little of everything... a lot of nothing."
+
+
+MetaDataFormat = "yaml"
+DefaultContentLanguage = "en"
+SectionPagesMenu = "main"
+Paginate = 10 # this is set low for demonstrating with dummy content. Set to a higher number
+googleAnalytics = ""
+#enableRobotsTXT = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[menu]
+ [[menu.main]]
+    name = "Home"
+    pre = "<i class='fa fa-home fa-fw'></i>"
+    weight = 1
+    identifier = "home"
+    url = "/"
+
+
+[params]
+  description = "A little of everything... a lot of nothing."
+  favicon = ""
+  twitter = "https://twitter.com/jaycromwell12"
+  github = "https://github.com/cromwell421"
+  linkedin = ""
+  mastodon = ""
+  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+  background_color_class = "bg-black"
+  featured_image = "/images/budapest_river_parliament.jpg"
+  recent_posts_number = 2
+  
+  
+  
