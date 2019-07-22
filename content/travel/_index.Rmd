@@ -8,7 +8,6 @@ featured_image: '/images/Cartagena_pd.jpg'
 output: html_document
 ---
 
-I have not been everyhere - not even close - but want to share all my experiences. See the different trips and description, as well as map highlighting the destinationsdescription: 
 
 ```{r include = FALSE}
 library(leaflet)
@@ -24,5 +23,5 @@ m <-leaflet(vacation) %>%
 See my travel map below:
 
 ```{r}
-m
+frameWidget(m)
 ```
