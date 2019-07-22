@@ -18,10 +18,13 @@ vacation <- read_csv("/Users/Jaycromwell/Desktop/R_Projects/jay_world_cities - S
 m <-leaflet(vacation) %>%
     addTiles() %>%  # Add default OpenStreetMap map tiles
     addMarkers(~lng,~lat, popup=vacation$desc)
+
 ```
 
 See my travel map below:
 
-```{r}
+```{r echo=FALSE}
 frameWidget(m)
 ```
+
+
