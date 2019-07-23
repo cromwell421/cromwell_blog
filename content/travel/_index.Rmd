@@ -15,16 +15,16 @@ library(tidyverse)
 library(widgetframe)
 vacation <- read_csv("/Users/Jaycromwell/Desktop/R_Projects/jay_world_cities - Sheet1.csv")
 
-m <-leaflet(vacation) %>%
+mp <-leaflet(vacation) %>%
     addTiles() %>%  # Add default OpenStreetMap map tiles
     addMarkers(~lng,~lat, popup=vacation$desc)
 
 ```
 
-See my travel map below:
+Explore my travel map below and click on icons to see the destination and date
 
 ```{r echo=FALSE}
-frameWidget(m)
+frameWidget(mp)
 ```
 
 
