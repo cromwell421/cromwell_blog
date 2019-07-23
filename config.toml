@@ -1,5 +1,5 @@
 title = "Jay Cromwell"
-baseURL = "/"
+baseURL = "https://jay-crom.netlify.com/"
 languageCode = "en-us"
 theme = "gohugo-theme-ananke"
 description = "A little of everything... a lot of nothing."
