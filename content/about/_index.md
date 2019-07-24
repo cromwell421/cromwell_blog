@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-description: Live every week like it's Shark Week       -Tracy Jordan"
+description: Live every week like it's Shark Week       -Tracy Jordan
 featured_image: '/images/Capri.jpg'
 ---
 

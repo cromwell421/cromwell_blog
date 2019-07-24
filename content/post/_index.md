@@ -1,7 +1,7 @@
 ---
 title: "Posts"
-description: "Hit me with your best shot   - Pat Benatar"
+description: "Posting Up here"
 featured_image: '/images/Barcelona.JPG'
 ---
 
-Get offended. send the links to your friends. talk about it. respond. repeat
+See all blog posts below. Sorry in advance

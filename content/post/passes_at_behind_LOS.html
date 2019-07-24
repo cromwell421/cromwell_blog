@@ -1,0 +1,45 @@
+---
+title: No Air, No Problem
+author: Jay Cromwell
+date: '2019-07-23'
+slug: passes_at_behind_LOS
+categories: []
+tags:
+  - rstats
+  - NFL
+  - NFLScrapR
+  - Mahomes
+description: 'I looked to see which QBs benefitted the most from 0 air yard throws'
+featured_image: ''
+---
+
+
+
+<p>If I were to ask which types of throws Pat Mahomes was the best at in 2018, many would say the deep ball…or the no-look pass…or the left-handed pass…or any other ridiculous pass he made. Not many would think it was the short pass. Actually the shortest pass of all. The Chiefs were by far and away the best team when it came to passes at or behind the line of scrimmage. These passes typically includes RB/WR screens, swing passes, checkdowns, etc. Not much arm strength required, but one of the strongest-armed players in the league lead the NFL in in Expected Points Added (EPA) on these throws. Why?</p>
+<div class="figure">
+<img src="/Users/Jaycromwell/Desktop/R_Projects/Passes_at_behind_LOS_2018.png" alt="EPA for passes at or behind the LOS in 2018." />
+<p class="caption">EPA for passes at or behind the LOS in 2018.</p>
+</div>
+<p>Andy Reid. These are not highly effective plays, but the Chief’s system and design is what made these plays successful (with a little help of playmakers like Tyreek Hill, Travis Kelce and Kareem Hunt.) This is not a knock on Mahomes, the guy can do things most QBs only dream of, but when almost 1000 of his pass yards are passes that didn’t cross the LOS, there is something else to be said. I mean, just look at the image above, Mahomes is in a league of his own.</p>
+<p>What makes the Chiefs so good at these short passes? Not having lived in the midwest, nor access to many Chiefs games, I cannot say for certain but looking at the EPA of who is catching the ball, I’d guess it has a lot to do with Hunt and getting the ball to the RBs. (sidebar - let me know if anyone want to provide me their All-22 access so I can get actual plays snip-its in here. I’ll trade ya my ex-roommates Netflix login.) You really see the true impact Hunt had as a receiver. This obviously doesn’t include him running routes down field, but the Chiefs seemed very determined to get him the ball in space. Whether the bulk of these are quick swing routes, check downs or well designed, perfectly timed screens, I do not know. That is for another post at another time.</p>
+<div class="figure">
+<img src="/Users/Jaycromwell/Desktop/R_Projects/passes_at_behind_LOS_KC_Rec.png" alt="EPA for passes at or behind the LOS in 2018 by KC Receiver." />
+<p class="caption">EPA for passes at or behind the LOS in 2018 by KC Receiver.</p>
+</div>
+<p>This also isn’t a one time thing for an Andy Reid led offense. 2017 Chiefs, with Alex Smith and a touch of Mahomes, saw the highest total EPA and just barely fell to second in EPA per dropback. In 2016, KC was 4th in both total EPA and EPA per dropback.</p>
+<p>Looking forward, I’d predeict a strong decline in these numbers with Hunt gone, Hill uncertain and an overall regression towards the mean. But then again, if that means more miraculous downfield plays from Mahomes, I am all for it.</p>
+<p>R code below using NFLScrapR</p>
+<pre class="r"><code>#Filter plays to only passes that are at or behind the Line of Scrimmage
+pass_length &lt;- pbp_2018 %&gt;%
+  filter(PlayType == &quot;Pass&quot; | PlayType == &quot;Sack&quot;) %&gt;%
+  filter(!is.na(Passer) &amp; AirYards &lt;=0) %&gt;%
+  group_by(Passer) %&gt;%
+  summarise(Attempts = n(), total_yds = sum(Yards.Gained), avg_yds_play = mean(Yards.Gained), Total_EPA = sum(EPA, na.rm = TRUE), EPA_per_Att = mean(EPA, na.rm = TRUE)) %&gt;%
+  filter(Attempts &gt; 50) 
+
+pass_length_rec &lt;- pbp_2018 %&gt;%
+  filter(PlayType == &quot;Pass&quot; | PlayType == &quot;Sack&quot;) %&gt;%
+  filter(!is.na(Passer) &amp; !is.na(Receiver) &amp; AirYards &lt;=0) %&gt;%
+  filter(posteam == &quot;KC&quot;) %&gt;%
+  group_by(Receiver) %&gt;%
+  summarise(Attempts = n(), total_yds = sum(Yards.Gained), avg_yds_play = mean(Yards.Gained), Total_EPA = sum(EPA, na.rm = TRUE), EPA_per_Att = mean(EPA, na.rm = TRUE))</code></pre>
