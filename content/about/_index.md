@@ -4,4 +4,6 @@ description: Live every week like it's Shark Week       -Tracy Jordan
 featured_image: '/images/Capri.jpg'
 ---
 
-My name is Jay and I am creating a blog...etc etc
+First of all, thanks you for coming to my page. This is the first website I've done and am very excited to share it with you all! I currently work in healthcare doing analytics and project management, as well as pursuing my MBA part-time. I'm an Atlanta native interested in all things sports, especially the NFL and Falcons. As I am sure you may have noticed, I don't talk about much else other than NFL stats and travelling. My goal is to travel to every continent and see the falcons win in every NFL stadium - a verrrry lofty goal I know, but 3 stadiums down so far.
+
+
