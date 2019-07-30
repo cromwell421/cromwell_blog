@@ -1,7 +1,7 @@
 ---
 title: Prague, Czech Republic
 author: Jay Cromwell
-date: '2019-07-24'
+date: '2019-02-10'
 slug: prague
 categories: []
 tags:

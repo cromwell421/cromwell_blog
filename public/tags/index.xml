@@ -6,55 +6,10 @@
     <description>Recent content in Tags on Jay Cromwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Czech Republic</title>
-      <link>/tags/czech-republic/</link>
-      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/czech-republic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>explore</title>
-      <link>/tags/explore/</link>
-      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/explore/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>prague</title>
-      <link>/tags/prague/</link>
-      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/prague/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tourist</title>
-      <link>/tags/tourist/</link>
-      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tourist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>travel</title>
-      <link>/tags/travel/</link>
-      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/travel/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>NFL</title>
@@ -80,6 +35,51 @@
       <pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/rstats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Czech Republic</title>
+      <link>/tags/czech-republic/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/czech-republic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>explore</title>
+      <link>/tags/explore/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/explore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prague</title>
+      <link>/tags/prague/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/prague/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tourist</title>
+      <link>/tags/tourist/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tourist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>travel</title>
+      <link>/tags/travel/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/travel/</guid>
       <description></description>
     </item>
     
