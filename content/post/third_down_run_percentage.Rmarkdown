@@ -1,0 +1,57 @@
+---
+title: Where Teams are Most Conservative
+author: Jay Cromwell
+date: '2019-07-10'
+slug: third_down_run_percentage
+tags:
+  - NFL
+  - NFLScrapR
+description: ''
+featured_image: ''
+---
+
+Everyone knows, or should know by now, that passing is more effective than running. This has been proven time and again. What I wanted to know was if teams tended to be more conservative by running the ball more often by field position. More specifically, where are teams running the ball more on third down and why. The below graph show yards to goal line broken down by distance to go over the past 5 years. It make sense, teams run less the farther they have to go for a first down. What was interesting was the slight, but defined, spike around the opposing 35 yard line. This shows how teams become more conservative once they get to the fringe of field goal range. They are more likely to run there to stay in FG range than be aggressive and air it out, risking a sack.
+
+
+![3rd Down Run Percentage by Yardline and Distance.](/images/third_down_run_percentage.png)
+
+Even when looking at EPA in this range on 3rd down, passing is still more effective than running, and teams should remember that. Playing for the FG is playing for second place.
+
+
+
+
+R code below using NFLScrapR
+```{r eval = FALSE}
+
+
+third_down_togo <- pbp_data_14_18 %>%
+  filter(posteam != "") %>%
+  filter(PlayType == "Pass" | PlayType == "Run" | PlayType == "Sack") %>%
+  filter(down == 3) %>%
+  mutate(PlayType2 = ifelse(PlayType == "Pass" | PlayType == "Sack", "Dropback",PlayType))
+
+third_down_togo$togo_dist <- cut(third_down_togo$ydstogo, 
+                                     breaks = c(0, 4, 8, 50), 
+                                     labels = c("0-3 yds", "4-7 yds", "8+"), 
+                                     right = FALSE)
+
+third_down_togo <- third_down_togo %>%
+  group_by(yrdline100, togo_dist) %>%
+  summarise(Attempts = n(), run_attempts = sum(PlayType2=="Run"), pass_attempts = sum(PlayType2=="Dropback"),run_percentage = run_attempts/Attempts, pass_percentage = pass_attempts/Attempts)
+
+
+ggplot(third_down_togo, aes(x = yrdline100, y = run_percentage, group = togo_dist, color = togo_dist)) + 
+  geom_point(size = .5) + 
+  geom_smooth(span = .75) +
+  ylab("Run %") + 
+  xlab("Yards to Goal Line") + 
+  theme_minimal() +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1), expand = c(0.05, 0)) + 
+  scale_x_reverse(expand = c(0.01, 0)) + 
+  ggtitle("3rd Down Run % by Yardline and To Go Distance \n (2014 - 2018)") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 16), axis.title = element_text(size = 16), axis.text = element_text(size = 16))
+
+
+```
+
+
