@@ -62,6 +62,43 @@
   </url>
   
   <url>
+    <loc>/tags/budapest/</loc>
+    <lastmod>2019-02-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/travel/budapest_hungary/</loc>
+    <lastmod>2019-02-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hungary/</loc>
+    <lastmod>2019-02-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/explore/</loc>
+    <lastmod>2019-02-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tourist/</loc>
+    <lastmod>2019-02-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/travel/</loc>
+    <lastmod>2019-02-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/czech-republic/</loc>
     <lastmod>2019-02-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -75,25 +112,7 @@
   </url>
   
   <url>
-    <loc>/tags/explore/</loc>
-    <lastmod>2019-02-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/prague/</loc>
-    <lastmod>2019-02-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tourist/</loc>
-    <lastmod>2019-02-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/travel/</loc>
     <lastmod>2019-02-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

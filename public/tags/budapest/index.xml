@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>travel on Jay Cromwell</title>
-    <link>/tags/travel/</link>
-    <description>Recent content in travel on Jay Cromwell</description>
+    <title>Budapest on Jay Cromwell</title>
+    <link>/tags/budapest/</link>
+    <description>Recent content in Budapest on Jay Cromwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 14 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/travel/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/budapest/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       <guid>/travel/budapest_hungary/</guid>
       <description>Budapest - February 2019
 I could go on and on about Budapest, my favorite city in the world so far, but I&amp;rsquo;ll try to keep it short-ish. We took the train from Vienna and travelling through the countryside, and well, it is pretty much what you&amp;rsquo;d imagine the Hungarian countryside to look like. Lots of nothing and the few towns and cities had a prevelant communism influence with un-maintained, large concrete buildings.</description>
-    </item>
-    
-    <item>
-      <title>Prague, Czech Republic</title>
-      <link>/travel/prague/</link>
-      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/travel/prague/</guid>
-      <description>Prague - February 2019
-Prague is one of my all time favorite cities. I most recently went in February. While it was freezing, going to Europe in winter did have a couple of perks, the main being few other tourists. I had been to Prague in the Summer and not having to fight for a spot in front of the Clock Tower was nice to say the least. Another great aspect of Europe in Winter was how beautiful Prague is in the snow.</description>
     </item>
     
   </channel>
