@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Jay Cromwell  | Welcome</title>
+    <title>Jay Cromwell  | Penalty Impact</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,33 +27,38 @@
     
 
     
-      <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Jay Cromwell" />
-      <link href="/index.xml" rel="feed" type="application/rss+xml" title="Jay Cromwell" />
-    
 
-    <meta property="og:title" content="Welcome" />
-<meta property="og:description" content="A little of everything...a lot of nothing." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+    <meta property="og:title" content="Penalty Impact" />
+<meta property="og:description" content="How do penalties influence the outcome of game?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/penalty_impact/" />
+<meta property="article:published_time" content="2019-09-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-12T00:00:00+00:00" />
+<meta itemprop="name" content="Penalty Impact">
+<meta itemprop="description" content="How do penalties influence the outcome of game?">
 
-<meta property="og:updated_time" content="2019-09-12T00:00:00+00:00" />
-<meta itemprop="name" content="Welcome">
-<meta itemprop="description" content="A little of everything...a lot of nothing.">
 
+<meta itemprop="datePublished" content="2019-09-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="532">
+
+
+
+<meta itemprop="keywords" content="NFL,NFLScrapR," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Welcome"/>
-<meta name="twitter:description" content="A little of everything...a lot of nothing."/>
+<meta name="twitter:title" content="Penalty Impact"/>
+<meta name="twitter:description" content="How do penalties influence the outcome of game?"/>
 
   </head>
 
   <body class="ma0 avenir bg-near-white">
 
     
+   
+  
 
-  
-  
-  <header class="cover bg-top" style="background-image: url('/images/budapest_river_parliament.jpg');">
-    <div class="bg-black-60">
+  <header>
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -125,132 +130,89 @@
   </div>
 </nav>
 
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          Welcome
-        </h1>
-        
-          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">
-            A little of everything...a lot of nothing.
-          </h2>
-        
-      </div>
     </div>
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
 
-<p>Welcome to my official blog where I will be posting about all sorts of (mostly) awesome stuff. Please explore, follow me on twitter and feel free to reach out if you have any questions or want to connect. If you like what you see, please share this page - the more the merrier!</p>
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Penalty Impact</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-09-12T00:00:00Z">September 12, 2019</time>
+      
+      
+    </header>
 
-<h5 id="this-site-was-built-with-r-markdown-and-all-graphs-maps-and-anlysis-done-using-r-and-or-python">This site was built with R markdown and all graphs, maps and anlysis done using R and/or Python</h5>
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>I&rsquo;ve always heard &ldquo;the team that commits the least amount of penalties wins the game.&rdquo; It makes sense, but I wanted to dig deeper. Not every penalty is created equal, so which ones truly &ldquo;penalize&rdquo; the team chances of winning? How much impact does having less penalties than the opponent? Let&rsquo;s find out.</p>
+
+<p>First, let&rsquo;s take a look at the Win Probability Added (WPA) from penalties. This measures how much the win probability model from NFLScrapR increases or decreases after the penalty is committed. The below graph shows all game outcomes (ties omitted) by number of penalties committed and penalty WPA totals for the game. As you can see, it is very congested, but there is a slight edge to the winning team benefiting more from penalties. With that being said, the difference is minimal and indicates not much of an impact from penalties in determining game outcome. The reasoning is likely due to the limited number of penalties committed a game. A team runs around 70-85 plays in an NFL game and averages only about 6 penalties per game. From a drive level, I assume penalties have a bigger impact and would be interesting to look at, but at the game level, it does not appear to be significant.</p>
+
+<p><img src="/images/penalties_win_loss_wpa_num.png" alt="Win Probability Added/Lost by Penalties per Game." /></p>
+
+<p>Next, I wanted to see if teams benefited from their opponent committing penalties compared to them being penalized. The below graphs show WPA from penalties committed by the team and by the opponent vs that teams season win percentage. This is very clear, it is better to commit less (impactful) penalties than have you opponent play a sloppy penalty game. On average, teams that do not increase their opponent&rsquo;s chances of winning by committing penalties have a better winning percentage in the season. This makes sense and goes with the traditional narrative, but why does it counter the point made above? I think this is more indicative of the saying &ldquo;better teams commit less mistakes.&rdquo;  When you look at an individual game, penalties don&rsquo;t affect the outcome much by having such little WPA impact. When we aggregate this over the season, it is a little more telling.</p>
+
+<p>They also have a bit of luck in their opponent gifting them WPA with the second graph showing a positive correlation, albeit very slight. This is not near as correlated to winning percentage as team&rsquo;s own penalties though, showing that the better teams are more disciplined teams.</p>
+
+<p><img src="/images/penalty_win_perc_penalized.png" alt="Team's Season Win Percentage by Penalty WPA." /></p>
+
+<p><img src="/images/penalty_win_perc_non_penalized.png" alt="Team's Season Win Percentage by Opponent's Penalty WPA." /></p>
+
+<p>Finally, out of curiosity, let&rsquo;s take a quick look at which penalties have the biggest impact.</p>
+
+<p><img src="/images/penalty_type_wpa_epa.png" alt="Average Penalty WPA and EPA." /></p>
+
+<p>Since penalties don&rsquo;t have much game impacts, certain ones do weigh more than others. Many of the big ones are after the play, and tack on 15 yards to the end of the play, making them more significant. Obviously, the timing of the penalty is highly important as well when weighing WPA. Going forward, it would be interesting to look at which teams in particular commit the worst penalties in clutch time, but for now, we can assume that if you want to be a good team, it would help to not commit impactful penalties. If you want to win a game&hellip;.that&rsquo;s a different story.</p>
+
+<p>As always, thanks NFLScrapR for the data!</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/nfl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">NFL</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/nflscrapr" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">NFLScrapR</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/post/passes_at_behind_los/">No Air, No Problem</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/third_down_run_percentage/">Where Teams are Most Conservative</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
 
   </article>
-  
-  
-  
-  
-  
-  
-  
-    
-    
-
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
-      
-       
-          <h1 class="flex-none">
-            Recent Posts
-          </h1>
-        
-
-      
-
-      <section class="w-100 mw8">
-        
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/post/penalty_impact/" class="color-inherit dim link">
-            Penalty Impact
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          I&rsquo;ve always heard &ldquo;the team that commits the least amount of penalties wins the game.&rdquo; It makes sense, but I wanted to dig deeper. Not every penalty is created equal, so which ones truly &ldquo;penalize&rdquo; the team chances of winning? How much impact does having less penalties than the opponent? Let&rsquo;s find out.
-First, let&rsquo;s take a look at the Win Probability Added (WPA) from penalties. This measures how much the win probability model from NFLScrapR increases or decreases after the penalty is committed.
-        </div>
-          <a href="/post/penalty_impact/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/post/passes_at_behind_los/" class="color-inherit dim link">
-            No Air, No Problem
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          If I were to ask which types of throws Pat Mahomes was the best at in 2018, many would say the deep ball…or the no-look pass…or the left-handed pass…or any other ridiculous pass he made. Not many would think it was the short pass. Actually the shortest pass of all. The Chiefs were by far and away the best team when it came to passes at or behind the line of scrimmage.
-        </div>
-          <a href="/post/passes_at_behind_los/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/post/third_down_run_percentage/" class="color-inherit dim link">
-            Where Teams are Most Conservative
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Everyone knows, or should know by now, that passing is more effective than running. This has been proven time and again. What I wanted to know was if teams tended to be more conservative by running the ball more often by field position. More specifically, where are teams running the ball more on third down and why. The below graph show yards to goal line broken down by distance to go over the past 5 years.
-        </div>
-          <a href="/post/third_down_run_percentage/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-      </section>
-
-      
-
-      </div>
-  
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
