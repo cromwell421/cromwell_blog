@@ -40,7 +40,7 @@
 
 <meta itemprop="datePublished" content="2019-07-10T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-10T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="337">
+<meta itemprop="wordCount" content="339">
 
 
 
@@ -164,7 +164,7 @@
   filter(posteam != &quot;&quot;) %&gt;%
   filter(PlayType == &quot;Pass&quot; | PlayType == &quot;Run&quot; | PlayType == &quot;Sack&quot;) %&gt;%
   filter(down == 3) %&gt;%
-  mutate(PlayType2 = ifelse(PlayType == &quot;Pass&quot; | PlayType == &quot;Sack&quot;, &quot;Dropback&quot;,PlayType))
+  mutate(PlayType2 = ifelse(PlayType == &quot;Pass&quot; | PlayType == &quot;Sack&quot;, &quot;Drop back&quot;,PlayType))
 
 third_down_togo$togo_dist &lt;- cut(third_down_togo$ydstogo, 
                                      breaks = c(0, 4, 8, 50), 
@@ -173,7 +173,7 @@ third_down_togo$togo_dist &lt;- cut(third_down_togo$ydstogo,
 
 third_down_togo &lt;- third_down_togo %&gt;%
   group_by(yrdline100, togo_dist) %&gt;%
-  summarise(Attempts = n(), run_attempts = sum(PlayType2==&quot;Run&quot;), pass_attempts = sum(PlayType2==&quot;Dropback&quot;),run_percentage = run_attempts/Attempts, pass_percentage = pass_attempts/Attempts)
+  summarise(Attempts = n(), run_attempts = sum(PlayType2==&quot;Run&quot;), pass_attempts = sum(PlayType2==&quot;Drop back&quot;),run_percentage = run_attempts/Attempts, pass_percentage = pass_attempts/Attempts)
 
 
 ggplot(third_down_togo, aes(x = yrdline100, y = run_percentage, group = togo_dist, color = togo_dist)) + 

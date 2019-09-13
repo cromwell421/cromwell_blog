@@ -29,25 +29,25 @@
     
 
     <meta property="og:title" content="No Air, No Problem" />
-<meta property="og:description" content="I looked to see which QBs benefitted the most from 0 air yard throws" />
+<meta property="og:description" content="I looked to see which QBs benefited the most from 0 air yard throws" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/passes_at_behind_los/" />
 <meta property="article:published_time" content="2019-07-23T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-07-23T00:00:00+00:00" />
 <meta itemprop="name" content="No Air, No Problem">
-<meta itemprop="description" content="I looked to see which QBs benefitted the most from 0 air yard throws">
+<meta itemprop="description" content="I looked to see which QBs benefited the most from 0 air yard throws">
 
 
 <meta itemprop="datePublished" content="2019-07-23T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="567">
+<meta itemprop="wordCount" content="572">
 
 
 
 <meta itemprop="keywords" content="rstats,NFL,NFLScrapR," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="No Air, No Problem"/>
-<meta name="twitter:description" content="I looked to see which QBs benefitted the most from 0 air yard throws"/>
+<meta name="twitter:description" content="I looked to see which QBs benefited the most from 0 air yard throws"/>
 
   </head>
 
@@ -155,19 +155,19 @@
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
 
 
-<p>If I were to ask which types of throws Pat Mahomes was the best at in 2018, many would say the deep ball…or the no-look pass…or the left-handed pass…or any other ridiculous pass he made. Not many would think it was the short pass. Actually the shortest pass of all. The Chiefs were by far and away the best team when it came to passes at or behind the line of scrimmage. These passes typically includes RB/WR screens, swing passes, checkdowns, etc. Not much arm strength required, but one of the strongest-armed players in the league lead the NFL in in Expected Points Added (EPA) on these throws. Why?</p>
+<p>If I were to ask which types of throws Pat Mahomes was the best at in 2018, many would say the deep ball…or the no-look pass…or the left-handed pass…or any other ridiculous pass he made. Not many would think it was the short pass. Actually the shortest pass of all. The Chiefs were by far and away the best team when it came to passes at or behind the line of scrimmage. These passes typically includes RB/WR screens, swing passes, check downs, etc. Not much arm strength required, but one of the strongest-armed players in the league lead the NFL in in Expected Points Added (EPA) on these throws. Why?</p>
 <div class="figure">
 <img src="/images/Passes_at_behind_LOS_2018.png" alt="EPA for passes at or behind the LOS in 2018." />
 <p class="caption">EPA for passes at or behind the LOS in 2018.</p>
 </div>
-<p>Andy Reid. These are not highly effective plays, but the Chief’s system and design is what made these plays successful (with a little help of playmakers like Tyreek Hill, Travis Kelce and Kareem Hunt.) This is not a knock on Mahomes, the guy can do things most QBs only dream of, but when almost 1000 of his pass yards are passes that didn’t cross the LOS, there is something else to be said. I mean, just look at the image above, Mahomes is in a league of his own.</p>
-<p>What makes the Chiefs so good at these short passes? Not having lived in the midwest, nor access to many Chiefs games, I cannot say for certain but looking at the EPA of who is catching the ball, I’d guess it has a lot to do with Hunt and getting the ball to the RBs. (sidebar - let me know if anyone want to provide me their All-22 access so I can get actual plays snip-its in here. I’ll trade ya my ex-roommates Netflix login.) You really see the true impact Hunt had as a receiver. This obviously doesn’t include him running routes down field, but the Chiefs seemed very determined to get him the ball in space. Whether the bulk of these are quick swing routes, check downs or well designed, perfectly timed screens, I do not know. That is for another post at another time.</p>
+<p>Andy Reid. These are not highly effective plays, but the Chief’s system and design is what made these plays successful (with a little help of play makers like Tyreek Hill, Travis Kelce and Kareem Hunt.) This is not a knock on Mahomes, the guy can do things most QBs only dream of, but when almost 1000 of his pass yards are passes that didn’t cross the LOS, there is something else to be said. I mean, just look at the image above, Mahomes is in a league of his own.</p>
+<p>What makes the Chiefs so good at these short passes? Not having lived in the Midwest, nor access to many Chiefs games, I cannot say for certain but looking at the EPA of who is catching the ball, I’d guess it has a lot to do with Hunt and getting the ball to the RBs. (sidebar - let me know if anyone want to provide me their All-22 access so I can get actual plays snip-its in here. I’ll trade ya my ex-roommates Netflix login.) You really see the true impact Hunt had as a receiver. This obviously doesn’t include him running routes down field, but the Chiefs seemed very determined to get him the ball in space. Whether the bulk of these are quick swing routes, check downs or well designed, perfectly timed screens, I do not know. That is for another post at another time.</p>
 <div class="figure">
 <img src="/images/passes_at_behind_LOS_KC_Rec.png" alt="EPA for passes at or behind the LOS in 2018 by KC Receiver." />
 <p class="caption">EPA for passes at or behind the LOS in 2018 by KC Receiver.</p>
 </div>
-<p>This also isn’t a one time thing for an Andy Reid led offense. 2017 Chiefs, with Alex Smith and a touch of Mahomes, saw the highest total EPA and just barely fell to second in EPA per dropback. In 2016, KC was 4th in both total EPA and EPA per dropback.</p>
-<p>Looking forward, I’d predict a strong decline in these numbers with Hunt gone, Hill uncertain and an overall regression towards the mean. But then again, if that means more miraculous downfield plays from Mahomes, I am all for it.</p>
+<p>This also isn’t a one time thing for an Andy Reid led offense. 2017 Chiefs, with Alex Smith and a touch of Mahomes, saw the highest total EPA and just barely fell to second in EPA per drop back. In 2016, KC was 4th in both total EPA and EPA per drop back.</p>
+<p>Looking forward, I’d predict a strong decline in these numbers with Hunt gone, Hill uncertain and an overall regression towards the mean. But then again, if that means more miraculous down field plays from Mahomes, I am all for it.</p>
 <p>R code below using NFLScrapR</p>
 <pre class="r"><code>#Filter plays to only passes that are at or behind the Line of Scrimmage
 pass_length &lt;- pbp_2018 %&gt;%

@@ -27,7 +27,7 @@ third_down_togo <- pbp_data_14_18 %>%
   filter(posteam != "") %>%
   filter(PlayType == "Pass" | PlayType == "Run" | PlayType == "Sack") %>%
   filter(down == 3) %>%
-  mutate(PlayType2 = ifelse(PlayType == "Pass" | PlayType == "Sack", "Dropback",PlayType))
+  mutate(PlayType2 = ifelse(PlayType == "Pass" | PlayType == "Sack", "Drop back",PlayType))
 
 third_down_togo$togo_dist <- cut(third_down_togo$ydstogo, 
                                      breaks = c(0, 4, 8, 50), 
@@ -36,7 +36,7 @@ third_down_togo$togo_dist <- cut(third_down_togo$ydstogo,
 
 third_down_togo <- third_down_togo %>%
   group_by(yrdline100, togo_dist) %>%
-  summarise(Attempts = n(), run_attempts = sum(PlayType2=="Run"), pass_attempts = sum(PlayType2=="Dropback"),run_percentage = run_attempts/Attempts, pass_percentage = pass_attempts/Attempts)
+  summarise(Attempts = n(), run_attempts = sum(PlayType2=="Run"), pass_attempts = sum(PlayType2=="Drop back"),run_percentage = run_attempts/Attempts, pass_percentage = pass_attempts/Attempts)
 
 
 ggplot(third_down_togo, aes(x = yrdline100, y = run_percentage, group = togo_dist, color = togo_dist)) + 
