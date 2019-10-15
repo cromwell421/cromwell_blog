@@ -3,7 +3,7 @@ baseURL = "https://jay-crom.netlify.com/"
 languageCode = "en-us"
 theme = "gohugo-theme-ananke"
 description = "A little of everything... a lot of nothing."
-
+disqusShortName = "Jay C"
 
 MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
@@ -38,5 +38,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   background_color_class = "bg-black"
   featured_image = "/images/budapest_river_parliament.jpg"
   recent_posts_number = 4
+  commentEnable = true
 
   
