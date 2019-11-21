@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/</loc>
+    <lastmod>2019-11-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/tags/nfl/</loc>
     <lastmod>2019-09-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -32,13 +39,6 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2019-09-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2019-09-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -136,6 +136,12 @@
   </url>
   
   <url>
+    <loc>/qb_comparisons/qb_comparisons/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -143,6 +149,12 @@
   
   <url>
     <loc>/categories/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/qb_comparisons/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
