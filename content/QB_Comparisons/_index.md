@@ -1,6 +1,8 @@
 ---
 title: "QB Comparisons"
-output: html_document
+output:
+ html_document:
+  theme: null
 runtime: shiny
 ---
 
