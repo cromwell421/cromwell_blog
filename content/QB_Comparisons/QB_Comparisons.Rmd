@@ -2,8 +2,3 @@
 output: html_document
 runtime: shiny
 ---
-
-<iframe src ="https://cromwell421.shinyapps.io/qb_comparison/" height=1000px width=1000px />
-
-
- 
