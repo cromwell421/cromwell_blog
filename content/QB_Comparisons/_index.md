@@ -4,13 +4,8 @@ output: html_document
 runtime: shiny
 ---
 
-<style>
-body {
-    position: absolute;
-    left: 0px;}
-
 <iframe width="1050" height="1350" scrolling="no" frameborder="no" align="left" src="https://cromwell421.shinyapps.io/qb_comparison/"> </iframe>
 
-</style>
+
 
 
