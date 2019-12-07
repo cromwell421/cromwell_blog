@@ -1,7 +1,7 @@
 ---
 title: "Posts"
 description: "Posting Up here"
-featured_image: '/images/budapest_river_parliament.JPG'
+featured_image: '/images/small_buda.JPG'
 ---
 
 See all blog posts below. Sorry in advance
