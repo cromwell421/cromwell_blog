@@ -1,6 +1,6 @@
 ---
 title: QB Comparison
-featured_image: '/images/MBS.jpg'
+featured_image: '/images/MBS2.jpg'
 output: html_document
 runtime: shiny
 ---
