@@ -5,7 +5,7 @@ date: '2019-11-17'
 slug: _index
 categories: []
 tags: []
-featured_image: /images/budapest_river_parliament.jpg
+featured_image: /images/ATL.jpg
 description: A little of everything...a lot of nothing.
 ---
 
