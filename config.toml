@@ -34,10 +34,16 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   github = "https://github.com/cromwell421"
   linkedin = ""
   mastodon = ""
-  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
   background_color_class = "bg-black"
   featured_image = "/images/budapest_river_parliament.jpg"
   recent_posts_number = 4
 #  commentEnable = true
+
+  # Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
+  # they have to be referred from static root. Example
+  # [[params.customCSS]]
+  #   href = "css/mystyle.css"
+  custom_css = ["custom.css"]
+
 
   
