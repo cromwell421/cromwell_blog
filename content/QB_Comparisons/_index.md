@@ -6,7 +6,7 @@ runtime: shiny
 ---
 
 
-<iframe width="600" height="1650" scrolling="yes" frameborder="no" out.width = "100%" src="https://cromwell421.shinyapps.io/qb_comparison/" allowfullscreen> </iframe>
+<iframe width="600" height="1650" scrolling="yes" frameborder="no" src="https://cromwell421.shinyapps.io/qb_comparison/" allowfullscreen> </iframe>
 
 
 
