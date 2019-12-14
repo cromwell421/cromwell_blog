@@ -43,7 +43,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   # they have to be referred from static root. Example
   # [[params.customCSS]]
   #   href = "css/mystyle.css"
-  custom_css = ["custom.css"]
+#  custom_css = ["custom.css"]
 
 
   
