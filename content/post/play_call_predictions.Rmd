@@ -18,8 +18,7 @@ Football is a game of knowing your opponent and taking advantage of mismatches. 
 
 Before we get started, I wanted to point out a few things. This analysis focuses purely on the scenario that triggers a play-call. This does not take into effect the formation of the offense nor the personnel on the field. Both of these are vitally important in the success of a play and how a defense will react, but I wanted to identify the factors that a coach considers before he signals in the play-call to the QB. My assumption is that before the coach calls a play, they decide whether to run or pass and that is what we are going to predict. 
 
-
-First, I needed to set a simple baseline to compare our model to. This way we ensure our model is better than a blind guess. To do this, I looked at the league average pass rates for each down and assumed the team is going to do whichever was weighted more. Not-so-surprisingly, on average teams pass more on every down. By using this assumption, our baseline prediction score is 60%. That means if we guess every play is a pass, we will be rate a bout 60% of the time.
+First, I needed to set a simple baseline to compare our model to. This way we ensure our model is better than a blind guess. To do this, I looked at the league average pass rates for each down and assumed the team is going to do whichever was weighted more. Not-so-surprisingly, on average teams pass more on every down. By using this assumption, our baseline prediction score is 60%. That means if we guess every play is a pass, we will be right about 60% of the time.
 
 ![](/images/league_pass_rate.png)
 
@@ -33,7 +32,7 @@ Once I had my model, there were two methods for applying it to the data. The fir
 Above shows the teams that the team-agnostic model predicted play-calls well for and those that it did not based on the 66% average (those California teams need to mix it up!) It also shows the most and least predicted teams over the past 5 years. On first look at 2019, this seems to pass the eyeball test. Among the most predictable offenses are bad offenses (or bad QB's relying on running): Chicago, [Stafford-less] Detroit, Washington and the NY Giants. ON the other end, we have Kansas City and Baltimore in the top 3 creative offenses. But what to make of the other teams? The Jets offense was abysmal, but it was the least predictable. A Sean McVay offense was most predictable? This is when we look to a different approach.
 
 
-Using the same model, I looked at the team level. To do this, I looped though every team and trained the model on only that team's play-calls, then made predictions on the team's test data set with the team-specific model. Overall, this gave us a better average prediction score of ~73%. Again, this is an improvement from blind guessing and from the league-trained model. The team specific output is below.
+Using the same model, I looked at the team level. To do this, I looped though every team and trained the model on only that team's play-calls, then made predictions on the team's test data set with the team-specific model. Overall, this gave us a better average prediction score of ~73%. Another improvement from blind guessing and an increase from the league-trained model. The team specific output is below:
 
 
 ![](/images/team_model_comp.png)
@@ -53,7 +52,6 @@ Pass/run predictability does not have much impact on the success of a team, but 
 
 All source code is shown below and done in R. Kudos to NFLScrapR for the data.
 
-***code coming soon***
 
 
 
