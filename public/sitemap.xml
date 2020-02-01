@@ -4,35 +4,42 @@
   
   <url>
     <loc>/tags/nfl/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/nflscrapr/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/play_call_predictions/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/rstats/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -6,10 +6,19 @@
     <description>Recent content in rstats on Jay Cromwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/rstats/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Predictability, what is it good for?</title>
+      <link>/post/play_call_predictions/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/play_call_predictions/</guid>
+      <description>Football is a game of knowing your opponent and taking advantage of mismatches. This is a big reason why players and coaches study film. Everyone has tendencies and identifying them before they happen in a game is a huge advantage. That is why I wanted to dive into offensive play-calling to highlight play-calling tendencies. Can we accurately predict if a team is going to run or pass purely on the game situation?</description>
+    </item>
     
     <item>
       <title>What&#39;s the Hurry?</title>

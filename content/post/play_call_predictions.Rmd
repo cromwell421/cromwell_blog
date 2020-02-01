@@ -1,0 +1,66 @@
+---
+title: Predictability, what is it good for?
+author: ''
+date: '2020-01-31'
+slug: play_call_predictions
+categories: []
+tags:
+  - NFLScrapR
+  - NFL
+  - rstats
+description: ''
+featured_image: ''
+output: html_document
+---
+
+
+Football is a game of knowing your opponent and taking advantage of mismatches. This is a big reason why players and coaches study film. Everyone has tendencies and identifying them before they happen in a game is a huge advantage. That is why I wanted to dive into offensive play-calling to highlight play-calling tendencies. Can we accurately predict if a team is going to run or pass purely on the game situation? How detrimental is it to have a "predictable" offense? Let's find out.
+
+Before we get started, I wanted to point out a few things. This analysis focuses purely on the scenario that triggers a play-call. This does not take into effect the formation of the offense nor the personnel on the field. Both of these are vitally important in the success of a play and how a defense will react, but I wanted to identify the factors that a coach considers before he signals in the play-call to the QB. My assumption is that before the coach calls a play, they decide whether to run or pass and that is what we are going to predict. 
+
+
+First, I needed to set a simple baseline to compare our model to. This way we ensure our model is better than a blind guess. To do this, I looked at the league average pass rates for each down and assumed the team is going to do whichever was weighted more. Not-so-surprisingly, on average teams pass more on every down. By using this assumption, our baseline prediction score is 60%. That means if we guess every play is a pass, we will be rate a bout 60% of the time.
+
+![](/images/league_pass_rate.png)
+
+Now time to build our model. I decided to use a binomial logistic regression to predict pass/run. Using NFLScrapR data for the last 5 years, I filtered the data to only include plays where the outcome was pass or run. Then I split the data into a training and testing set and fit a model. After some variable tinkering to filter out insignificance, I settled on the following inputs:  ***Win Probability,  Down, Under 4 Minutes in Half (Y/N), Yards to First Down and Score Differential***
+
+Once I had my model, there were two methods for applying it to the data. The first one I looked at was applying the model to every play, regardless of team. This created a "league trained" model that we could then group by team. Overall, this model was able to predict play-calls at a rate of ~67%. An improvement from our baseline, but not by much. 
+
+
+![](/images/league_model_comp.png)
+
+Above shows the teams that the team-agnostic model predicted play-calls well for and those that it did not based on the 66% average (those California teams need to mix it up!) It also shows the most and least predicted teams over the past 5 years. On first look at 2019, this seems to pass the eyeball test. Among the most predictable offenses are bad offenses (or bad QB's relying on running): Chicago, [Stafford-less] Detroit, Washington and the NY Giants. ON the other end, we have Kansas City and Baltimore in the top 3 creative offenses. But what to make of the other teams? The Jets offense was abysmal, but it was the least predictable. A Sean McVay offense was most predictable? This is when we look to a different approach.
+
+
+Using the same model, I looked at the team level. To do this, I looped though every team and trained the model on only that team's play-calls, then made predictions on the team's test data set with the team-specific model. Overall, this gave us a better average prediction score of ~73%. Again, this is an improvement from blind guessing and from the league-trained model. The team specific output is below.
+
+
+![](/images/team_model_comp.png)
+
+This paints a much different view for 2019. For the most part, there are some bad offenses listed as predictable and some really good ones listed as unpredictable. But again, there are some outliers that wouldn't make sense, like KC being predictable here, but not in previous model. The previous model shows how creative a team is compared to other teams, but this shows a better picture of coaching tendencies and how creative a coach is from play to play. The latter of which has to be more impactful when evaluating offensive effectiveness, right? 
+
+By the way, look at Baltimore being unpredictable in both models with its emphasis on analytics impacting coaching decisions....just saying.
+
+So what does this mean? Some teams are creative when it comes to pass/run play-calls and some aren't, but how does that translate to success? Using the stronger, team-specific model against team offensive EPA, we can see that there really isn't much correlation between the two. 
+
+![](/images/predict_epa.png)
+
+
+Pass/run predictability does not have much impact on the success of a team, but that doesn't mean it is meaningless. As stated before, this is a very high-level analysis of play-call tendencies that doesn't take into effect the actual play-call. Four-verts is very different than a RB screen, but both play-calls are passes. Analytics is meant to supplement decision making and this could still be valuable to a team that knows how to use it. A good coach and a good team can use similar tendency data, matched with personnel, detailed play-call and film study to get the best understanding of their opponent possible. That is the future of football we are heading towards, where old-school film study and new-age analytic come together to create new insights and innovate.
+
+
+
+All source code is shown below and done in R. Kudos to NFLScrapR for the data.
+
+***code coming soon***
+
+
+
+
+
+
+
+
+
+
