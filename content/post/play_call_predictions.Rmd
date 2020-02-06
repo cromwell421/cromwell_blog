@@ -41,7 +41,7 @@ This paints a much different view for 2019. For the most part, there are some ba
 
 By the way, look at Baltimore being unpredictable in both models with its emphasis on analytics impacting coaching decisions....just saying.
 
-So what does this mean? Some teams are creative when it comes to pass/run play-calls and some aren't, but how does that translate to success? Using the stronger, team-specific model against team offensive EPA, we can see that there really isn't much correlation between the two. 
+So what does this mean? Obviously, some coaches are more predicatble than others when it comes to playcalling tendencies, but how does that translate to success? Analytics has proven that passing is better than running in most situaions, except for scenarios like 3rd and short, so what's the value in being unpredictable? Using the stronger, team-specific model against team offensive EPA, we can see that there really isn't much correlation between the two. 
 
 ![](/images/predict_epa.png)
 
