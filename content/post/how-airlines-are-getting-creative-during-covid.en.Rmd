@@ -1,5 +1,5 @@
 ---
-title: How Airlines Are Getting Creative During Covid
+title: How Airlines Are Getting Creative During Covid-19
 author: Jay Cromwell
 date: '2020-10-15'
 slug: how-airlines-are-getting-creative-during-covid
@@ -12,8 +12,6 @@ tags:
 description: ''
 featured_image: ''
 ---
-
-## How Airlines are Getting Creative During Covid-19
 
 By now, you may have heard of the coronavirus that is wreaking havoc of the world's economy and has lead to over a million deaths worldwide. The seriousness of the COVID-19 pandemic cannot be understated and people must adapt to overcome and eradicate the virus. Similarly, firms and industries are forced to be innovative in order to overcome the impactful storm caused by from COVID-19.
 
