@@ -26,11 +26,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     identifier = "home"
     url = "/"
 
-[[menu.main]]
-  name = "Airline"
-  url = "https://cromwell421.shinyapps.io/airline_dashboard/"
-  weight = 3
-#  hrefTargetBlank = false
 
 [params]
   description = "A little of everything... a lot of nothing."
