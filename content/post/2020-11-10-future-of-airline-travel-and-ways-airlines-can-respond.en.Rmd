@@ -1,0 +1,43 @@
+---
+title: Future of Airline Travel and Ways Airlines Can Respond
+author: Jay Cromwell
+date: '2020-11-10'
+slug: future-of-airline-travel-and-ways-airlines-can-respond
+categories: []
+tags:
+  - Airlines
+  - Business
+  - Delta
+description: ''
+featured_image: ''
+---
+
+There are many speculations as to when the airline industry will bounce back after the Covid-19 pandemic. It may take years to get back to pre-pandemic levels and perhaps even then there will be aspects of the industry that will never be the same. How airlines and consumers respond to the industry changes will determine the length and severity of recovery. This post outlines how airlines can weather the storm in the upcoming years by pivoting their marketing strategy.
+
+### CONTINUE THE FOCUS ON HEALTH
+
+First and foremost, airlines need to continue to address the health and safety of travelers to earn back consumer confidence. At the start of the pandemic, airlines were quick and effective in addressing the sanitation of planes and implement mask requirements. However, strides still need to be made on promoting the safety of flying to consumers. In fact, airplanes are safer than your average household, with enhanced air circulation and an effective filtration process. Studies show that particles are removed from the air of planes an average [15 times faster than in a normal home](https://www.usatoday.com/story/travel/airline-news/2020/10/15/coronavirus-study-finds-jetliners-safer-than-operating-rooms/3665469001/)me. The issue for airlines is that is it difficult to convey this message when most of the world is seeing increasing cases and regional lockdowns. 
+
+With the airline and tourism industry on the forefront of Covid-19 impacts, it is easy to associate flying with high-risk activity. Airlines can mitigate this with direct communications that target consumer concerns. Free flight changes and more booking flexibility is a good start, but airlines need to connect deeper with passengers. Specifically, airlines need to proactively highlight the lengths they are going to keep passengers safe. Delta Airlines is a good example of this, as they have dedicated entire channels of its News Hub to their [health initiatives](https://news.delta.com/tags/health-safety) as well as publicly engaging in a [new partnership with Lysol](https://thepointsguy.com/news/delta-air-lines-lysol-partnership/). Now is the time to loudly and clearly broadcast the safety of air travel, while at the same time sympathizing with broader consumer concerns. This will continue to stand out in consumers' minds so that when they are ready to travel, they can be confident that the airline will get them there safely.
+
+Airlines can also integrate new solutions around global health tracking. For example, [CommonPass](https://www.mobihealthnews.com/news/digital-health-passport-commonpass-begins-testing-help-travel-and-trade-resume) and [CovidPass](https://www.weforum.org/agenda/2020/07/covid-19-passport-app-health-travel-covidpass-quarantine-event/) are new apps that serve as a "global health passport." Focusing on Covid-19, these secure apps contain health and testing information for passengers and could potentially streamline health checks currently being required around the world. The benefits of airlines partnering with health apps would be extremely valuable, considering the likely impact of Covid-19 on consumers. By partnering with these apps, airlines would be able to prevent potential spread on planes, reassure uncertain travelers on airline safety, expedite boarding/landing processes and gain insights based on new consumer data, just to name a few.
+
+### SHIFT STRATEGY AROUND LEISURE AND DOMESTIC TRAVEL
+
+Perhaps the biggest concern for airlines is the future of business travel. While business travelers make up only about [10% of passengers for major airlines, it consists of 55-75% of profits](https://www.nytimes.com/2020/07/13/business/business-travel-hotels-airlines.html). Therefore, airlines will be keeping a close watch on business travel trends in the post-pandemic world. The rate at which companies are willing to go back to the office will dictate how much business travel will return to normal. However, as more and more companies embrace work-from-home environments, holding in-office meetings, conferences and other in-person events are going to become less and less likely. 
+
+To offset the loss in business travel, airlines should shift focus to luxury travel. Up-selling consumers to premium fares would not only increase margins, but allow airlines to capitalize on changing consumer preferences. Passengers are more likely to pay extra to have more space between them and the person next to them while the pandemic is going on. They would also be more inclined to spend less time on the aircraft, so they would likely take advantage of the de-boarding perks of premiums classes and being towards the front of the plane.
+
+Business travel isn't the only aspect of flying that brings a lot of uncertainty. With the global environment changing everyday, longer international flights pose more risks than domestic flights. Therefore, airlines need to prioritize domestic flights over the next few months and likely years. Many airlines are already doing this, but based on some reports, it would be years before long-haul demand stabilizes to pre-pandemic levels. McKinsey estimates that domestic travel will fully [recover 1-2 years earlier](https://www.mckinsey.com/industries/travel-logistics-and-transport-infrastructure/our-insights/covid-19-tourism-spend-recovery-in-numbers) than international, mainly driven by governmental restrictions and passenger comforts. 
+
+The focus on shorter, domestic routes also coincides with airlines' decisions to [park or retire many of their wide-body aircrafts](https://thepointsguy.com/news/american-airlines-will-suspend-all-but-3-long-haul-routes-park-most-wide-body-jets/). These larger planes are more costly to operate and would lead to lower margins when flying short distances with little passenger counts. Add that to lower passenger volumes for years, airlines should rethink their long-term strategy and determine the influence that wide-body planes have on that strategy. New narrow-body planes, like the Airbus 321 and Boeing 737 Max, are being rolled out. These models are [capable of longer distances](https://algnewsletter.com/aviation/are-we-going-to-fly-smaller-covid-19-crisis-may-accelerate-the-boost-of-narrowbody-in-long-haul-flights/) and could be the future for many airlines. Committing to these aircrafts pose less financial risk due better sizing with passenger volume, but allow flexibility in the long run with potential for long-distance flying.
+
+![Airbus 321 XLR Flight Range ](/images/Airbus.PNG)
+*source: Airbus*
+
+
+The airline industry has a long, steep climb to get back to the levels they were in 2019. Identifying value capture opportunities, however big or small, and adapting to change can make a big difference in dictating the travel landscape in the future.
+
+
+
+
