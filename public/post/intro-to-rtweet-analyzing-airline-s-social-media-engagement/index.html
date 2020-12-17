@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Jay Cromwell  | Intro to rtweet: Analyzing Airline&#39;s Social Media Engagement</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Intro to rtweet: Analyzing Airline&#39;s Social Media Engagement" />
+<meta property="og:description" content="I mentioned in another post about the importance of airlines connecting with passengers. A major aspect of that is the method of communication leveraged by the firm. Social media has become the main medium of companies to engage with consumers. With the rise of social media, comes open source data to analyze interactions. Luckily, Twitter has a plethora of data available to its followers.
+Twitter Analytics is great for companies to analyze the reach and the effectiveness of their tweets." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/intro-to-rtweet-analyzing-airline-s-social-media-engagement/" />
+<meta property="article:published_time" content="2020-12-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-16T00:00:00+00:00" />
+<meta itemprop="name" content="Intro to rtweet: Analyzing Airline&#39;s Social Media Engagement">
+<meta itemprop="description" content="I mentioned in another post about the importance of airlines connecting with passengers. A major aspect of that is the method of communication leveraged by the firm. Social media has become the main medium of companies to engage with consumers. With the rise of social media, comes open source data to analyze interactions. Luckily, Twitter has a plethora of data available to its followers.
+Twitter Analytics is great for companies to analyze the reach and the effectiveness of their tweets.">
+
+
+<meta itemprop="datePublished" content="2020-12-16T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-12-16T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1075">
+
+
+
+<meta itemprop="keywords" content="Airlines,Marketing,rstats,R," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Intro to rtweet: Analyzing Airline&#39;s Social Media Engagement"/>
+<meta name="twitter:description" content="I mentioned in another post about the importance of airlines connecting with passengers. A major aspect of that is the method of communication leveraged by the firm. Social media has become the main medium of companies to engage with consumers. With the rise of social media, comes open source data to analyze interactions. Luckily, Twitter has a plethora of data available to its followers.
+Twitter Analytics is great for companies to analyze the reach and the effectiveness of their tweets."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Jay Cromwell
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/qb_comparisons/" title="Dashboards page">
+              Dashboards
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/post/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/travel/" title="Travel page">
+              Travel
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+<a href="https://twitter.com/jaycromwell12" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+<a href="https://www.linkedin.com/in/jay-cromwell-45329973/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/cromwell421" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Intro to rtweet: Analyzing Airline&#39;s Social Media Engagement</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-12-16T00:00:00Z">December 16, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+
+<p>I mentioned in another post about the importance of airlines connecting with passengers. A major aspect of that is the method of communication leveraged by the firm. Social media has become the main medium of companies to engage with consumers. With the rise of social media, comes open source data to analyze interactions. Luckily, Twitter has a plethora of data available to its followers.</p>
+<p>Twitter Analytics is great for companies to analyze the reach and the effectiveness of their tweets. Any account can access their basic Twitter Analytics dashboard, with Enterprise accounts able to access more in-depth metrics. But for those interested in a more DIY analysis looking across multiple accounts, Twitter allows people to easily access its REST API to pull various metrics from its site. This post outlines how you can extract and analyze airline Twitter data using R.</p>
+<div id="connecting-to-twitter-api" class="section level2">
+<h2>Connecting to Twitter API</h2>
+<p>I was able to connect to Twitter’s API and pull timeline information for 5 major US airlines using the package ‘rtweet’. The data includes tweets, favorites, retweets, time, locations and much more.</p>
+<pre class="r"><code>library(rtweet)
+library(tidyverse)
+
+accounts &lt;- c(&#39;@delta&#39;, &#39;@united&#39;, &#39;@americanair&#39;, &#39;@SouthwestAir&#39;, &#39;@JetBlue&#39;)
+
+tweets &lt;- get_timeline(accounts, n= 3200, exclude_replies = TRUE, is_retweet = FALSE) %&gt;% 
+  filter(is_retweet == FALSE)</code></pre>
+<p>Just like that, we have Twitter data we can analyze. The get_timeline() function pulls the latest tweets based on the account parameters specified. In this case, I pulled the timeline from Delta, United, American, Southwest and JetBlue. The function is limited to the latest 3200 tweets per account, and considering the nature of how airlines mainly use their Twitter, the majority of the tweets are automated responses to people tagging the airline. Therefore, we had to limit the data to “status tweets” which is original tweets by the airline that was not triggered as a reply or retweet of another tweet. This significantly lowered the amount of tweets and the timeline of tweets. For example, of the 3200 tweets by United Airlines, only 39 tweets were Status Tweets and pulled in for analysis. Due to this limitations, this post is not intended for actual insights, but merely an introduction to rtweet using real airline industry data.</p>
+</div>
+<div id="aggregating-the-data" class="section level2">
+<h2>Aggregating the Data</h2>
+<p>Next, we want to look at a tweet’s engagement. Engagement here is defined as favorites plus retweets. Replies and profile clicks were not included in the data pull, so they are not used for this analysis, but would generally be included in an engagement metric. Similarly, the API call does not include impressions, or the number of times the tweet was seen by a Twitter user, so we will be using follower count in determining engagement rates.</p>
+<pre class="r"><code>engagement &lt;- tweets %&gt;% 
+  mutate(engagement = favorite_count + retweet_count) %&gt;% #Create engagement metric
+  group_by(screen_name) %&gt;% 
+  summarise(n = n(), #number of tweets
+            min_date = min(created_at), #determine when the first tweet of the data was
+                        tweets_per_day = n / (round(as.numeric(difftime(lubridate::today(),min(created_at))),0)), #Divide total tweets by range of days
+            total_engagement = sum(engagement), 
+            avg_engagement = total_engagement/n, 
+            followers = max(followers_count), #number of followers for account at time of the get_timeline() pull
+            engagement_rate = total_engagement/n / followers) %&gt;% #engagement weighted by number of followers
+  mutate(screen_name = ifelse(screen_name == &#39;united&#39;, &#39;United&#39;, screen_name)) #Change united to United</code></pre>
+</div>
+<div id="making-sense-of-the-data" class="section level2">
+<h2>Making Sense of the Data</h2>
+<p>The first metric we create is the total number of tweets per account (variable “n”). Since we are limited to the most recent 3200 tweets, it is not accurate to say that an airline tweets more if they have more status tweets. It could be that they had a many replies recently that made up the majority of the allotted tweets. In order to get a standard metric of tweet frequency, we take the timeline of the first and last tweet for each account and calculate tweets per day. Not perfect, but a better metric for identifying how often an airline does a status tweet.</p>
+<p>Next, we calculate the engagement scores - average engagement and engagement rate. The former takes the average engagement per tweet. Engagement rate incorporates the number of followers per account (in lieu of impressions). Since the accounts have varying amount of followers that could inflate other metrics, engagement rate allows us to see how effective the tweets are per follower.</p>
+<p><img src="/images/eng_table.jpg" /></p>
+</div>
+<div id="visualizing-the-data" class="section level2">
+<h2>Visualizing the Data</h2>
+<p>Using ggplot2, we can visualize the information that we just calculated to get a better understanding of how airlines compare to each other (see code for plot at the bottom of the post).</p>
+<p><img src="/images/engagement.jpg" /></p>
+<p>Based on the output, we see that Southwest does the most status tweets per day, while Delta significantly lags in terms of tweet frequency (they do have a separate Delta News Hub account that likely accounts for the lower amount of tweets). Additionally, Southwest is far and away more effective in engaging twitter users in terms of both average engagement and engagement rate.</p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>Obviously, this is a very limited analysis of Twitter data and does not provide reliable insights, but hopefully it provides a helpful introduction into using R to access the Twitter API and analyze the data. The <a href="https://cran.r-project.org/web/packages/rtweet/rtweet.pdf">rtweet documentation</a> includes many more functions than pulling one account’s timeline so please check it out if this interests you. Taking this further, it would be interesting to explore more data and apply text mining or sentiment analysis to identify how the tweets are capturing engagement.</p>
+<p>Please connect on LinkedIn or Twitter if you have any additional questions!</p>
+<pre class="r"><code>#CREATING THE SIDE-BY-SIDE PLOTS ABOVE
+library(ggplot2)
+library(patchwork)
+
+colors &lt;- c(&#39;dodgerblue2&#39;, &#39;red&#39;, &#39;darkblue&#39;, &#39;gold2&#39;, &#39;blue3&#39;) #try and match color to the airline colors
+
+g1&lt;- ggplot(engagement, aes(x = reorder(screen_name, -tweets_per_day), y = tweets_per_day)) +
+  geom_bar(position=&quot;identity&quot;, stat=&quot;identity&quot;, fill = colors) +
+  xlab(&quot;Airline&quot;) + 
+  ylab(&quot;Tweets per Day&quot;) + 
+  theme_minimal() +
+  theme(
+    legend.title = element_blank(),
+    legend.position = &quot;bottom&quot;,
+    plot.title = element_text(face = &quot;bold&quot;),
+    plot.subtitle = element_text(face= &quot;italic&quot;), 
+    plot.caption = element_text(hjust = 0)) +
+  labs(
+    title = &quot;Frequency of Tweets by Airlines&quot;,
+    subtitle = &quot;Delta is Tweeting Half as Often as its Competitors&quot;,
+    # subtitle = &quot;Status Tweets Only from Nov/Dec 2020 Timeframe&quot;,
+    caption = &quot;\nSource: Data collected from Twitter&#39;s API&quot;
+  )
+
+g2 &lt;- ggplot(engagement, aes(y = avg_engagement, x = engagement_rate,label = screen_name)) + 
+  geom_point() +
+  ggrepel::geom_text_repel() +
+  xlab(&quot;Engagement Rate&quot;) + 
+  ylab(&quot;Enagement per Tweet&quot;) + 
+  theme_minimal() +
+  scale_x_continuous(labels = scales::percent_format()) +
+  theme(
+    legend.title = element_blank(),
+    legend.position = &quot;bottom&quot;,
+    plot.subtitle = element_text(face= &quot;italic&quot;),
+    plot.title = element_text(face = &quot;bold&quot;)) +
+  labs(
+    title = &quot;Twitter Engagement Scores&quot;,
+    subtitle = &quot;Southwest Leads Airlines with its Ability to Enage with Consumers&quot;,
+    caption = &quot;\n*Only status tweets from Nov/Dec 2020 included&quot;
+  )
+
+g1 + g2  #patchwork to comnine plots</code></pre>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/airlines" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Airlines</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/marketing" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Marketing</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/rstats" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">rstats</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/r" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">R</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/post/random-thoughts-what-can-airlines-learn-from-2-chainz/">Random Thoughts - What Can Airlines Learn from 2 Chainz</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/future-of-airline-travel-and-ways-airlines-can-respond/">Future of Airline Travel and Ways Airlines Can Respond</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/how-airlines-are-getting-creative-during-covid/">How Airlines Are Getting Creative During Covid-19</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/play_call_predictions/">Predictability, what is it good for?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/whats-the-hurry/">What&#39;s the Hurry?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/passes_at_behind_los/">No Air, No Problem</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/" >
+    &copy; 2020 Jay Cromwell
+  </a>
+    <div>
+
+
+
+<a href="https://twitter.com/jaycromwell12" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+<a href="https://www.linkedin.com/in/jay-cromwell-45329973/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/cromwell421" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

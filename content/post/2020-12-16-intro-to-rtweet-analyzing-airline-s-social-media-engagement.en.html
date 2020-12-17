@@ -1,0 +1,106 @@
+---
+title: 'Intro to rtweet: Analyzing Airline''s Social Media Engagement'
+author: Jay Cromwell
+date: '2020-12-16'
+slug: intro-to-rtweet-analyzing-airline-s-social-media-engagement
+categories: []
+tags:
+  - Airlines
+  - Marketing
+  - rstats
+  - R
+description: ''
+featured_image: ''
+---
+
+
+
+<p>I mentioned in another post about the importance of airlines connecting with passengers. A major aspect of that is the method of communication leveraged by the firm. Social media has become the main medium of companies to engage with consumers. With the rise of social media, comes open source data to analyze interactions. Luckily, Twitter has a plethora of data available to its followers.</p>
+<p>Twitter Analytics is great for companies to analyze the reach and the effectiveness of their tweets. Any account can access their basic Twitter Analytics dashboard, with Enterprise accounts able to access more in-depth metrics. But for those interested in a more DIY analysis looking across multiple accounts, Twitter allows people to easily access its REST API to pull various metrics from its site. This post outlines how you can extract and analyze airline Twitter data using R.</p>
+<div id="connecting-to-twitter-api" class="section level2">
+<h2>Connecting to Twitter API</h2>
+<p>I was able to connect to Twitter’s API and pull timeline information for 5 major US airlines using the package ‘rtweet’. The data includes tweets, favorites, retweets, time, locations and much more.</p>
+<pre class="r"><code>library(rtweet)
+library(tidyverse)
+
+accounts &lt;- c(&#39;@delta&#39;, &#39;@united&#39;, &#39;@americanair&#39;, &#39;@SouthwestAir&#39;, &#39;@JetBlue&#39;)
+
+tweets &lt;- get_timeline(accounts, n= 3200, exclude_replies = TRUE, is_retweet = FALSE) %&gt;% 
+  filter(is_retweet == FALSE)</code></pre>
+<p>Just like that, we have Twitter data we can analyze. The get_timeline() function pulls the latest tweets based on the account parameters specified. In this case, I pulled the timeline from Delta, United, American, Southwest and JetBlue. The function is limited to the latest 3200 tweets per account, and considering the nature of how airlines mainly use their Twitter, the majority of the tweets are automated responses to people tagging the airline. Therefore, we had to limit the data to “status tweets” which is original tweets by the airline that was not triggered as a reply or retweet of another tweet. This significantly lowered the amount of tweets and the timeline of tweets. For example, of the 3200 tweets by United Airlines, only 39 tweets were Status Tweets and pulled in for analysis. Due to this limitations, this post is not intended for actual insights, but merely an introduction to rtweet using real airline industry data.</p>
+</div>
+<div id="aggregating-the-data" class="section level2">
+<h2>Aggregating the Data</h2>
+<p>Next, we want to look at a tweet’s engagement. Engagement here is defined as favorites plus retweets. Replies and profile clicks were not included in the data pull, so they are not used for this analysis, but would generally be included in an engagement metric. Similarly, the API call does not include impressions, or the number of times the tweet was seen by a Twitter user, so we will be using follower count in determining engagement rates.</p>
+<pre class="r"><code>engagement &lt;- tweets %&gt;% 
+  mutate(engagement = favorite_count + retweet_count) %&gt;% #Create engagement metric
+  group_by(screen_name) %&gt;% 
+  summarise(n = n(), #number of tweets
+            min_date = min(created_at), #determine when the first tweet of the data was
+                        tweets_per_day = n / (round(as.numeric(difftime(lubridate::today(),min(created_at))),0)), #Divide total tweets by range of days
+            total_engagement = sum(engagement), 
+            avg_engagement = total_engagement/n, 
+            followers = max(followers_count), #number of followers for account at time of the get_timeline() pull
+            engagement_rate = total_engagement/n / followers) %&gt;% #engagement weighted by number of followers
+  mutate(screen_name = ifelse(screen_name == &#39;united&#39;, &#39;United&#39;, screen_name)) #Change united to United</code></pre>
+</div>
+<div id="making-sense-of-the-data" class="section level2">
+<h2>Making Sense of the Data</h2>
+<p>The first metric we create is the total number of tweets per account (variable “n”). Since we are limited to the most recent 3200 tweets, it is not accurate to say that an airline tweets more if they have more status tweets. It could be that they had a many replies recently that made up the majority of the allotted tweets. In order to get a standard metric of tweet frequency, we take the timeline of the first and last tweet for each account and calculate tweets per day. Not perfect, but a better metric for identifying how often an airline does a status tweet.</p>
+<p>Next, we calculate the engagement scores - average engagement and engagement rate. The former takes the average engagement per tweet. Engagement rate incorporates the number of followers per account (in lieu of impressions). Since the accounts have varying amount of followers that could inflate other metrics, engagement rate allows us to see how effective the tweets are per follower.</p>
+<p><img src="/images/eng_table.jpg" /></p>
+</div>
+<div id="visualizing-the-data" class="section level2">
+<h2>Visualizing the Data</h2>
+<p>Using ggplot2, we can visualize the information that we just calculated to get a better understanding of how airlines compare to each other (see code for plot at the bottom of the post).</p>
+<p><img src="/images/engagement.jpg" /></p>
+<p>Based on the output, we see that Southwest does the most status tweets per day, while Delta significantly lags in terms of tweet frequency (they do have a separate Delta News Hub account that likely accounts for the lower amount of tweets). Additionally, Southwest is far and away more effective in engaging twitter users in terms of both average engagement and engagement rate.</p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>Obviously, this is a very limited analysis of Twitter data and does not provide reliable insights, but hopefully it provides a helpful introduction into using R to access the Twitter API and analyze the data. The <a href="https://cran.r-project.org/web/packages/rtweet/rtweet.pdf">rtweet documentation</a> includes many more functions than pulling one account’s timeline so please check it out if this interests you. Taking this further, it would be interesting to explore more data and apply text mining or sentiment analysis to identify how the tweets are capturing engagement.</p>
+<p>Please connect on LinkedIn or Twitter if you have any additional questions!</p>
+<pre class="r"><code>#CREATING THE SIDE-BY-SIDE PLOTS ABOVE
+library(ggplot2)
+library(patchwork)
+
+colors &lt;- c(&#39;dodgerblue2&#39;, &#39;red&#39;, &#39;darkblue&#39;, &#39;gold2&#39;, &#39;blue3&#39;) #try and match color to the airline colors
+
+g1&lt;- ggplot(engagement, aes(x = reorder(screen_name, -tweets_per_day), y = tweets_per_day)) +
+  geom_bar(position=&quot;identity&quot;, stat=&quot;identity&quot;, fill = colors) +
+  xlab(&quot;Airline&quot;) + 
+  ylab(&quot;Tweets per Day&quot;) + 
+  theme_minimal() +
+  theme(
+    legend.title = element_blank(),
+    legend.position = &quot;bottom&quot;,
+    plot.title = element_text(face = &quot;bold&quot;),
+    plot.subtitle = element_text(face= &quot;italic&quot;), 
+    plot.caption = element_text(hjust = 0)) +
+  labs(
+    title = &quot;Frequency of Tweets by Airlines&quot;,
+    subtitle = &quot;Delta is Tweeting Half as Often as its Competitors&quot;,
+    # subtitle = &quot;Status Tweets Only from Nov/Dec 2020 Timeframe&quot;,
+    caption = &quot;\nSource: Data collected from Twitter&#39;s API&quot;
+  )
+
+g2 &lt;- ggplot(engagement, aes(y = avg_engagement, x = engagement_rate,label = screen_name)) + 
+  geom_point() +
+  ggrepel::geom_text_repel() +
+  xlab(&quot;Engagement Rate&quot;) + 
+  ylab(&quot;Enagement per Tweet&quot;) + 
+  theme_minimal() +
+  scale_x_continuous(labels = scales::percent_format()) +
+  theme(
+    legend.title = element_blank(),
+    legend.position = &quot;bottom&quot;,
+    plot.subtitle = element_text(face= &quot;italic&quot;),
+    plot.title = element_text(face = &quot;bold&quot;)) +
+  labs(
+    title = &quot;Twitter Engagement Scores&quot;,
+    subtitle = &quot;Southwest Leads Airlines with its Ability to Enage with Consumers&quot;,
+    caption = &quot;\n*Only status tweets from Nov/Dec 2020 included&quot;
+  )
+
+g1 + g2  #patchwork to comnine plots</code></pre>
+</div>

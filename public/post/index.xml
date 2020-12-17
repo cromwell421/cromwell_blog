@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Jay Cromwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Intro to rtweet: Analyzing Airline&#39;s Social Media Engagement</title>
+      <link>/post/intro-to-rtweet-analyzing-airline-s-social-media-engagement/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/intro-to-rtweet-analyzing-airline-s-social-media-engagement/</guid>
+      <description>I mentioned in another post about the importance of airlines connecting with passengers. A major aspect of that is the method of communication leveraged by the firm. Social media has become the main medium of companies to engage with consumers. With the rise of social media, comes open source data to analyze interactions. Luckily, Twitter has a plethora of data available to its followers.
+Twitter Analytics is great for companies to analyze the reach and the effectiveness of their tweets.</description>
+    </item>
     
     <item>
       <title>Random Thoughts - What Can Airlines Learn from 2 Chainz</title>
