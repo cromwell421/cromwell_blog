@@ -42,7 +42,7 @@ Twitter Analytics is great for companies to analyze the reach and the effectiven
 
 <meta itemprop="datePublished" content="2020-12-16T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-12-16T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1075">
+<meta itemprop="wordCount" content="1072">
 
 
 
@@ -178,9 +178,10 @@ library(tidyverse)
 
 accounts &lt;- c(&#39;@delta&#39;, &#39;@united&#39;, &#39;@americanair&#39;, &#39;@SouthwestAir&#39;, &#39;@JetBlue&#39;)
 
-tweets &lt;- get_timeline(accounts, n= 3200, exclude_replies = TRUE, is_retweet = FALSE) %&gt;% 
-  filter(is_retweet == FALSE)</code></pre>
-<p>Just like that, we have Twitter data we can analyze. The get_timeline() function pulls the latest tweets based on the account parameters specified. In this case, I pulled the timeline from Delta, United, American, Southwest and JetBlue. The function is limited to the latest 3200 tweets per account, and considering the nature of how airlines mainly use their Twitter, the majority of the tweets are automated responses to people tagging the airline. Therefore, we had to limit the data to “status tweets” which is original tweets by the airline that was not triggered as a reply or retweet of another tweet. This significantly lowered the amount of tweets and the timeline of tweets. For example, of the 3200 tweets by United Airlines, only 39 tweets were Status Tweets and pulled in for analysis. Due to this limitations, this post is not intended for actual insights, but merely an introduction to rtweet using real airline industry data.</p>
+tweets &lt;- get_timeline(accounts, n= 3200, exclude_replies = TRUE, is_retweet = FALSE) 
+</code></pre>
+<p>Just like that, we have Twitter data we can analyze. The get_timeline() function pulls the latest tweets based on the account parameters specified. In this case, I pulled the timeline from Delta, United, American, Southwest and JetBlue. The function is limited to the latest 3200 tweets per account, and considering the nature of how airlines mainly use their Twitter, the majority of the tweets are automated responses to people tagging the airline.</p>
+<p>Therefore, we had to limit the data to “status tweets” which is original tweets by the airline that was not triggered as a reply or retweet of another tweet. This significantly lowered the amount of tweets and the timeline of tweets. For example, of the 3200 tweets by United Airlines, only 39 tweets were status tweets and pulled in for analysis. Due to these limitations, this post is not intended for actual insights, but merely an introduction to rtweet using real airline industry data.</p>
 </div>
 <div id="aggregating-the-data" class="section level2">
 <h2>Aggregating the Data</h2>
@@ -199,20 +200,20 @@ tweets &lt;- get_timeline(accounts, n= 3200, exclude_replies = TRUE, is_retweet 
 </div>
 <div id="making-sense-of-the-data" class="section level2">
 <h2>Making Sense of the Data</h2>
-<p>The first metric we create is the total number of tweets per account (variable “n”). Since we are limited to the most recent 3200 tweets, it is not accurate to say that an airline tweets more if they have more status tweets. It could be that they had a many replies recently that made up the majority of the allotted tweets. In order to get a standard metric of tweet frequency, we take the timeline of the first and last tweet for each account and calculate tweets per day. Not perfect, but a better metric for identifying how often an airline does a status tweet.</p>
-<p>Next, we calculate the engagement scores - average engagement and engagement rate. The former takes the average engagement per tweet. Engagement rate incorporates the number of followers per account (in lieu of impressions). Since the accounts have varying amount of followers that could inflate other metrics, engagement rate allows us to see how effective the tweets are per follower.</p>
+<p>The first metric we create is the total number of tweets per account (variable “n”). Since we are limited to the most recent 3200 tweets, it is not accurate to say that an airline tweets more if they have more status tweets. It could be that they had many replies recently that made up the majority of the allotted tweets. In order to get a standard metric of tweet frequency, we take the timeline of the first and last tweet for each account and calculate tweets per day. Not perfect, but a better metric for identifying how often an airline does a status tweet.</p>
+<p>Next, we calculate the engagement scores - average engagement and engagement rate. The former takes the average engagement per tweet. Engagement rate incorporates the number of followers per account (in lieu of impressions). Since the accounts have varying amounts of followers that could inflate other metrics, engagement rate allows us to see how effective the tweets are per follower.</p>
 <p><img src="/images/eng_table.jpg" /></p>
 </div>
 <div id="visualizing-the-data" class="section level2">
 <h2>Visualizing the Data</h2>
 <p>Using ggplot2, we can visualize the information that we just calculated to get a better understanding of how airlines compare to each other (see code for plot at the bottom of the post).</p>
 <p><img src="/images/engagement.jpg" /></p>
-<p>Based on the output, we see that Southwest does the most status tweets per day, while Delta significantly lags in terms of tweet frequency (they do have a separate Delta News Hub account that likely accounts for the lower amount of tweets). Additionally, Southwest is far and away more effective in engaging twitter users in terms of both average engagement and engagement rate.</p>
+<p>Based on the output, we see that Southwest does the most status tweets per day, while Delta significantly lags in terms of tweet frequency (they do have a separate Delta News Hub account that could account for the lower amount of tweets). Additionally, Southwest is far and away more effective in engaging twitter users in terms of both average engagement and engagement rate.</p>
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>
 <p>Obviously, this is a very limited analysis of Twitter data and does not provide reliable insights, but hopefully it provides a helpful introduction into using R to access the Twitter API and analyze the data. The <a href="https://cran.r-project.org/web/packages/rtweet/rtweet.pdf">rtweet documentation</a> includes many more functions than pulling one account’s timeline so please check it out if this interests you. Taking this further, it would be interesting to explore more data and apply text mining or sentiment analysis to identify how the tweets are capturing engagement.</p>
-<p>Please connect on LinkedIn or Twitter if you have any additional questions!</p>
+<p>Please connect on LinkedIn or Twitter if you have any additional questions or suggestions!</p>
 <pre class="r"><code>#CREATING THE SIDE-BY-SIDE PLOTS ABOVE
 library(ggplot2)
 library(patchwork)
