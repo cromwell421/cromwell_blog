@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>travel on Jay Cromwell</title>
+    <title>Travel on Jay Cromwell</title>
     <link>/tags/travel/</link>
-    <description>Recent content in travel on Jay Cromwell</description>
+    <description>Recent content in Travel on Jay Cromwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/travel/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data Initiatives that Can Help Airlines Rebound</title>
+      <link>/post/data-initiatives-that-can-help-airlines-rebound/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/data-initiatives-that-can-help-airlines-rebound/</guid>
+      <description>The travel industry recovery is going to be a long, difficult road. Airlines, hotels, travel agents and many other in the industry need to find new ways to gain insights and capture value in an environment that has likely changed forever. There are many facets in which airlines can do this, but one is the continued emphasis on data to to gain a competitive advantage.
+Airlines use data in many aspects of their operations, including pricing, analyzing customer feedback, identify marketing strategies and scheduling airplane maintenance, just to name a few.</description>
+    </item>
     
     <item>
       <title>Budapest, Hungary</title>

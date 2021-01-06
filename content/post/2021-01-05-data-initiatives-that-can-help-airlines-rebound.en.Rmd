@@ -1,0 +1,46 @@
+---
+title: Data Initiatives that Can Help Airlines Rebound
+author: ''
+date: '2021-01-05'
+slug: data-initiatives-that-can-help-airlines-rebound
+categories: []
+tags:
+  - Airlines
+  - NDC
+  - Data
+  - Business
+  - Travel
+  - Analytics
+description: ''
+featured_image: ''
+---
+
+The travel industry recovery is going to be a long, difficult road. Airlines, hotels, travel agents and many other in the industry need to find new ways to gain insights and capture value in an environment that has likely changed forever. There are many facets in which airlines can do this, but one is the continued emphasis on data to to gain a competitive advantage.
+
+Airlines use data in many aspects of their operations, including pricing, analyzing customer feedback, identify marketing strategies and scheduling airplane maintenance, just to name a few. Perhaps the most well-known instance of data usage for airlines is around its revenue management. American Airlines kickstarted a new way of thinking many years ago by applying analytics to its inventory management. By focusing on minimizing empty seats to maximize revenue, yield management became a staple throughout the industry. 
+
+Today, with analytics departments becoming more and more robust, being innovative in collecting and analyzing data is more important than ever. Specific to the Covid-19 disruption, understanding customers is going to be vital for airlines to bounce back. Which segments are going to be the first to return to flying? What are services are customers going to demand or expect? How has their willingness to pay changed? What are the trends in destinations searches? When and how will business travel return? These are just a few of the questions that airlines are going to need to be able to answer in order to speed up recovery. They are also questions that can be answered by effectively leveraging the data available and tapping into new data sources.
+
+## Machine Learning and AI
+
+There are numerous analytical methods that airlines can use on their data to improve operations. All airlines have likely implemented one form of data science or another to their operations well before Covid-19 happened. From using machine-learning to AI, data science can be applied to predict flight delays or anticipate aircraft maintenance. Airlines can also segment customers into specific behavioral groups and analyze customer satisfaction surveys to identify significant aspects of flying. 
+
+Post Covid-19, airlines can embrace and expand their analytical commitments to determine how trends have changed among customers. Customer preferences are not going to be the same as they were pre-pandemic, so acting on new trends and insights can help firms predict future indicators that may not have been traditionally useful. While data science and AI are useful for airlines, it is also important for firms to focus on capturing new data and sharing it across enterprises.
+
+## Interoperability
+
+A major trend that is prevalent across industries that should be especially important to the airlines is the push for interoperability. Systems should be able integrate with themselves in order to easily and quickly share data. The practice of siloed information can lead to many issues for firms. For airlines, there are many moving parts where having a fully integrated ecosystem would provide many benefits, both internally to the firm as well as with third party vendors. An example with Covid-19 is the number of flight disruptions and cancellations. This information is important for the network and inventory departments, customer services, revenue management, pricing (internal, ATPCO, etc), outside travel agents, even marketing and sales.
+
+Another benefit of interoperability is around data governance and person information. [Data privacy laws](https://oag.ca.gov/privacy/ccpa) have been passed in Europe and some US states, with others putting them on the ballot. Companies need to know what customer data is in-house, where it resides and who has access to it at all times. Integrated systems will make that governance process easier for firms, whether it is government mandated yet or not.
+
+## New Distribution Capability
+
+Another initiative that is gaining traction specifically in the air travel industry is the adoption of the [New Distribution Capability](https://www.iata.org/en/programs/airline-distribution/ndc/) (NDC). Created by the IATA, the NDC aims to solve the fragmented information-sharing between airlines and travel agencies or OTA's. The current system, EDIFACT, is dated and does not have the capability for airlines to offer their full product suite through OTA's in real-time, nor the ability to collect and own all information on their customers. The NDA would solve both of those problems. The XML-based transmission system provides a framework for airlines to directly send ancillary product offerings, like baggage discounts and in-flight sales, in real-time to third-party sellers to include in their listings. The NDC could also bypass intermediaries, like GDS's, so that airlines can tap into and own more of their customer data *(although airlines have customized their NDC implementations and since OTA's are already integrated with GDS's, it could be that GDS's will still be integral in the new NDC environment. But that is for another post* 🤷
+♂️*).* 
+
+Having more control of the customer data means being able to provide more personalized products through mediums that airlines weren't previously able to. I wrote about the importance of [focusing on higher end leisure](https://www.offsideswithjay.com/post/future-of-airline-travel-and-ways-airlines-can-respond/) travel,  and with the NDC, airlines can easily collect data and identify customers who would be likely to purchase a seat upgrade while selling through a third party travel agent. The NDC also [include rich content](https://www.mindsay.com/blog/what-is-new-distribution-capability-ndc), meaning airlines can share images or videos that may help with marketing fares and stand out among its competitors.
+
+
+Post Covid, airlines need to leverage any advantage they can in gaining ground of what will be an unfamiliar and smaller travel market. Analytics should and will be a big part of the rebound. Let me know what you think airlines should focus on in order to rebound. Reach out on [LinkedIn](https://www.linkedin.com/in/jay-cromwell-45329973/) or [Twitter](https://twitter.com/JayCromwell12)!
+
+
